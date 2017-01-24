@@ -53,8 +53,8 @@ public class Controller {
 					String patInfo=input(Hospital.PAT_SPEC);
 					String[] patInfoArr=patInfo.split(" ");
 					pat.setUid(Integer.parseInt(patInfoArr[0]));
-					docId=Integer.parseInt(patInfoArr[1]);
-					nurId=Integer.parseInt(patInfoArr[2]);
+					nurId=Integer.parseInt(patInfoArr[1]);
+					docId=Integer.parseInt(patInfoArr[2]);
 					/*pat.setDocId(Integer.parseInt(patInfoArr[1]));
 					pat.setNurId(Integer.parseInt(patInfoArr[2]));*/
 					//service.checkDocIdNurId(Integer.parseInt(patInfoArr[1]), Integer.parseInt(patInfoArr[2]),object[0],object[1]);
