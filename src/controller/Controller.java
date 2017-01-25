@@ -55,16 +55,6 @@ public class Controller {
 					pat.setUid(Integer.parseInt(patInfoArr[0]));
 					nurId=Integer.parseInt(patInfoArr[1]);
 					docId=Integer.parseInt(patInfoArr[2]);
-					/*pat.setDocId(Integer.parseInt(patInfoArr[1]));
-					pat.setNurId(Integer.parseInt(patInfoArr[2]));*/
-					//service.checkDocIdNurId(Integer.parseInt(patInfoArr[1]), Integer.parseInt(patInfoArr[2]),object[0],object[1]);
-					/*if(docId==(doc.getUid())&&nurId==(nur.getUid())){
-						pat.setDocId(docId);
-						pat.setNurId(nurId);
-					}else{
-						showMsg("의사 또는 간호사 등록을 먼저하세요.");
-						break;
-					}*/
 					pat.setName(patInfoArr[3]);
 					pat.setSsn(patInfoArr[4]);
 					pat.setAddr(patInfoArr[5]);
@@ -72,8 +62,7 @@ public class Controller {
 					pat.setEmail(patInfoArr[7]);
 					pat.setPatJob(patInfoArr[8]);
 					object[2]=pat;
-					service.checkDocIdNurId(docId,nurId,object);
-					showMsg(pat.toString());
+					showMsg(service.checkDocIdNurId(docId,nurId,object));
 					break;
 				case "4": 
 					String bmiInfo=input("키, 몸무게");
