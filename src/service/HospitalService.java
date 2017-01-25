@@ -4,5 +4,5 @@ import domain.PatientBean;
 
 public interface HospitalService {
 	public String getBmi(PatientBean pat);
-	public String checkDocIdNurId(int docId, int nurId,Object[] object);
+	public String checkDocIdNurId(String docId, String nurId,Object[] object);
 }

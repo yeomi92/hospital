@@ -23,7 +23,7 @@ public class Controller {
 					doc = new DoctorBean();
 					String docInfo=input(Hospital.DOC_SPEC);
 					String[] docInfoArr= docInfo.split(" ");
-					doc.setUid(Integer.parseInt(docInfoArr[0]));
+					doc.setUid((docInfoArr[0]));
 					doc.setMajorTreat(docInfoArr[1]);
 					doc.setName(docInfoArr[2]);
 					doc.setSsn(docInfoArr[3]);
@@ -37,7 +37,7 @@ public class Controller {
 					nur = new NurseBean();
 					String nurInfo=input(Hospital.NUR_SPEC);
 					String[] nurInfoArr=nurInfo.split(" ");
-					nur.setUid(Integer.parseInt(nurInfoArr[0]));
+					nur.setUid((nurInfoArr[0]));
 					nur.setMajorJob(nurInfoArr[1]);
 					nur.setName(nurInfoArr[2]);
 					nur.setSsn(nurInfoArr[3]);
@@ -48,13 +48,13 @@ public class Controller {
 					object[1]=nur;
 					break;
 				case "3":
-					int docId=0,nurId=0;
+					String docId="",nurId="";
 					pat = new PatientBean();
 					String patInfo=input(Hospital.PAT_SPEC);
 					String[] patInfoArr=patInfo.split(" ");
-					pat.setUid(Integer.parseInt(patInfoArr[0]));
-					nurId=Integer.parseInt(patInfoArr[1]);
-					docId=Integer.parseInt(patInfoArr[2]);
+					pat.setUid((patInfoArr[0]));
+					nurId=(patInfoArr[1]);
+					docId=(patInfoArr[2]);
 					pat.setName(patInfoArr[3]);
 					pat.setSsn(patInfoArr[4]);
 					pat.setAddr(patInfoArr[5]);
@@ -67,8 +67,8 @@ public class Controller {
 				case "4": 
 					String bmiInfo=input("Å°, ¸ö¹«°Ô");
 					String[] bmiInfoArr=bmiInfo.split(" ");
-					pat.setHeight((Double.parseDouble(bmiInfoArr[0]))/100);
-					pat.setWeight(Double.parseDouble(bmiInfoArr[1]));
+					pat.setHeight((bmiInfoArr[0]));
+					pat.setWeight((bmiInfoArr[1]));
 					showMsg(service.getBmi(pat));
 				break;
 			}

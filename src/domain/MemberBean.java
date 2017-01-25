@@ -3,8 +3,7 @@ package domain;
 import java.util.Calendar;
 
 public class MemberBean {
-	protected String name, ssn, addr, phone, email;
-	protected int uid;
+	protected String name, ssn, addr, phone, email,uid;
 	public String getName() {
 		return name;
 	}
@@ -35,10 +34,10 @@ public class MemberBean {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getUid() {
+	public String getUid() {
 		return uid;
 	}
-	public void setUid(int uid) {
+	public void setUid(String uid) {
 		this.uid = uid;
 	}
 	public String getGender(String ssn){

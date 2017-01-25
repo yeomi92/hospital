@@ -1,31 +1,35 @@
 package domain;
 
 public class PatientBean extends MemberBean{
-	private String patJob;
-	private int docId,nurId;
-	private double height,weight;
-	public double getHeight() {
+	private String patJob,height,weight,bloodType,docId,nurId;
+	public String getBloodType() {
+		return bloodType;
+	}
+	public void setBloodType(String bloodType) {
+		this.bloodType = bloodType;
+	}
+	public String getHeight() {
 		return height;
 	}
-	public void setHeight(double height) {
+	public void setHeight(String height) {
 		this.height = height;
 	}
-	public double getWeight() {
+	public String getWeight() {
 		return weight;
 	}
-	public void setWeight(double weight) {
+	public void setWeight(String weight) {
 		this.weight = weight;
 	}
-	public int getDocId() {
+	public String getDocId() {
 		return docId;
 	}
-	public void setDocId(int docId) {
+	public void setDocId(String docId) {
 		this.docId = docId;
 	}
-	public int getNurId() {
+	public String getNurId() {
 		return nurId;
 	}
-	public void setNurId(int nurId) {
+	public void setNurId(String nurId) {
 		this.nurId = nurId;
 	}
 	public String getPatJob() {

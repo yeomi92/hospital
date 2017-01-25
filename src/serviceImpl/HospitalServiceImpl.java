@@ -8,8 +8,9 @@ public class HospitalServiceImpl implements HospitalService{
 	@Override
 	public String getBmi(PatientBean pat){
 		String result="";
-		double bmi=0;
-		bmi=pat.getWeight()/(pat.getHeight()*pat.getHeight());
+		double bmi=0,height=0;
+		height=Double.parseDouble(pat.getHeight())/100;
+		bmi=Double.parseDouble(pat.getWeight())/((height*height));
 		if (bmi>30.0){
 			result="고도비만";
 		} else if (bmi>25.0){
@@ -24,9 +25,9 @@ public class HospitalServiceImpl implements HospitalService{
 		return result;
 	}
 	@Override
-	public String checkDocIdNurId(int docId, int nurId,Object[] object){
+	public String checkDocIdNurId(String docId, String nurId,Object[] object){
 		String result="";
-		System.out.println(((MemberBean) object[0]).getUid()+"   "+((MemberBean)object[1]).getUid());
+		System.out.println(((MemberBean) object[0]).getUid()+","+((MemberBean)object[1]).getUid());
 		if(docId==(((MemberBean) object[0]).getUid())&&nurId==(((MemberBean)object[1]).getUid())){
 			((PatientBean)object[2]).setDocId(docId);
 			((PatientBean)object[2]).setNurId(nurId);
