@@ -1,12 +1,12 @@
 package domain;
 
 public class DoctorBean extends MemberBean{ //탄생목적이 db에 값을 가져가서 저장하는 것이다. 그러므로 schema와 같게 만들어야 한다.
-	private String docPosition,majorTreat,progileImg;
+	private String docPosition,majorTreat,profileImg;
 	public String getProgileImg() {
-		return progileImg;
+		return profileImg;
 	}
-	public void setProgileImg(String progileImg) {
-		this.progileImg = progileImg;
+	public void setProgileImg(String profileImg) {
+		this.profileImg = profileImg;
 	}
 	public String getDocPosition() {
 		return docPosition;
@@ -22,13 +22,20 @@ public class DoctorBean extends MemberBean{ //탄생목적이 db에 값을 가져가서 저장
 	}
 	@Override
 	public String toString() {
-		return String.format("doctor ID: %s\n"
+		/*return String.format("doctor ID: %s\n"
 					+ "major treatment: %s\n"
 					+ "name: %s\n"
 					+ "gender: %s\n"
 					+ "phone: %s\n"
 					+ "email: %s\n"
 					+ "position: %s\n",
-					uid,majorTreat,name,getGender(ssn),phone,email,docPosition);
+					uid,majorTreat,name,getGender(ssn),phone,email,docPosition);*/
+		return String.format("doctor ID: %s\n"
+				+ "major treatment: %s\n"
+				+ "name: %s\n"
+				+ "phone: %s\n"
+				+ "email: %s\n"
+				+ "position: %s\n",
+				uid,majorTreat,name,phone,email,docPosition);
 	}
 }

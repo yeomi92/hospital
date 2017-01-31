@@ -22,13 +22,20 @@ public class NurseBean extends MemberBean{
 	}
 	@Override
 	public String toString() {
-		return String.format("nurse ID: %s\n"
+		/*return String.format("nurse ID: %s\n"
 					+ "major job: %s\n"
 					+ "name: %s\n"
 					+ "gender: %s\n"
 					+ "phone: %s\n"
 					+ "email: %s\n"
 					+ "position: %s\n",
-					uid,majorJob,name,getGender(ssn),phone,email,nurPosition);
+					uid,majorJob,name,getGender(ssn),phone,email,nurPosition);*/
+		return String.format("nurse ID: %s\n"
+				+ "major job: %s\n"
+				+ "name: %s\n"
+				+ "phone: %s\n"
+				+ "email: %s\n"
+				+ "position: %s\n",
+				uid,majorJob,name,phone,email,nurPosition);
 	}
 }
