@@ -9,7 +9,11 @@ public class Hospital {
 			+ "3.REG-PATIENTS\n"
 			+ "4.CHECK BMI\n"
 			+ "5.DOCTOR LIST\n"
-			+ "6.NURSE LIST";
+			+ "6.NURSE LIST\n"
+			+ "7.Find by doctor ID\n"
+			+ "8.Find by nurse ID\n"
+			+ "9.Find by doctor Name\n"
+			+ "10.Find by nurse Name\n";
 	public final static String DOC_SPEC=
 			"INPUT AS doctor ID, major treatment, name, ssn, phone, email, position";
 	public final static String NUR_SPEC=

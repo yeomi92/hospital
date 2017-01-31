@@ -23,14 +23,14 @@ public class Controller {
 				case "1":
 					doc = new DoctorBean();
 					String[] docInfoArr= input(Hospital.DOC_SPEC).split(" ");
-					doc.setUid((docInfoArr[0]));/*
+					doc.setUid((docInfoArr[0]));
 					doc.setMajorTreat(docInfoArr[1]);
 					doc.setName(docInfoArr[2]);
 					doc.setSsn(docInfoArr[3]);
 					doc.setPhone(docInfoArr[4]);
 					doc.setEmail(docInfoArr[5]);
 					doc.setDocPosition(docInfoArr[6]);
-					showMsg(doc.toString());*/
+					showMsg(doc.toString());
 					object[0]=doc;
 					service.regist(doc);
 					break;
@@ -39,13 +39,13 @@ public class Controller {
 					String nurInfo=input(Hospital.NUR_SPEC);
 					String[] nurInfoArr=nurInfo.split(" ");
 					nur.setUid((nurInfoArr[0]));
-					nur.setMajorJob(nurInfoArr[1]);/*
+					nur.setMajorJob(nurInfoArr[1]);
 					nur.setName(nurInfoArr[2]);
 					nur.setSsn(nurInfoArr[3]);
 					nur.setPhone(nurInfoArr[4]);
 					nur.setEmail(nurInfoArr[5]);
 					nur.setNurPosition(nurInfoArr[6]);
-					showMsg(nur.toString());*/
+					showMsg(nur.toString());
 					object[1]=nur;
 					service.regist(nur);
 					break;
@@ -94,12 +94,12 @@ public class Controller {
 				case "7"://의사 아이디 찾기
 					doc.setUid(input("찾을 의사 아이디를 입력하세요."));
 					MemberBean memberDocId = service.findById(doc);
-					showMsg(memberDocId.getUid()==null?"해당 의사가 없습니다.":memberDocId.toString());
+					showMsg(service.exist(doc)?"해당 의사가 없습니다.":memberDocId.toString());
 					break;
 				case "8"://간호사 아이디 찾기
 					nur.setUid(input("찾을 간호사 아이디를 입력하세요."));
 					MemberBean memberNurId = service.findById(nur);
-					showMsg(memberNurId.getUid()==null?"해당 간호사가 없습니다.":memberNurId.toString());
+					showMsg(service.exist(nur)?"해당 간호사가 없습니다.":memberNurId.toString());
 				case "9"://의사 이름 찾기
 					doc.setName(input("찾을 의사 이름을 입력하세요."));
 					
@@ -139,8 +139,13 @@ public class Controller {
 					service.change(doc);
 					break;
 				case "12":
+					doc.setUid(input("삭제할 의사 아이디를 입력하세요."));
+					service.remove(doc);
 					break;
-					
+				case "13":
+					nur.setUid(input("삭제할 간호사 아이디를 입력하세요."));
+					service.remove(nur);
+					break;
 			}
 		}
 		

@@ -22,20 +22,13 @@ public class DoctorBean extends MemberBean{ //탄생목적이 db에 값을 가져가서 저장
 	}
 	@Override
 	public String toString() {
-		/*return String.format("doctor ID: %s\n"
+		return String.format("doctor ID: %s\n"
 					+ "major treatment: %s\n"
 					+ "name: %s\n"
 					+ "gender: %s\n"
 					+ "phone: %s\n"
 					+ "email: %s\n"
 					+ "position: %s\n",
-					uid,majorTreat,name,getGender(ssn),phone,email,docPosition);*/
-		return String.format("doctor ID: %s\n"
-				+ "major treatment: %s\n"
-				+ "name: %s\n"
-				+ "phone: %s\n"
-				+ "email: %s\n"
-				+ "position: %s\n",
-				uid,majorTreat,name,phone,email,docPosition);
+					uid,majorTreat,name,getGender(ssn),phone,email,docPosition);
 	}
 }

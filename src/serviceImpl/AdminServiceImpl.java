@@ -145,30 +145,57 @@ public class AdminServiceImpl implements AdminService{
 		if((member!=null)&&(member instanceof DoctorBean)){
 			for(int i=0;i<count[0];i++){
 				if(member.getUid().equals(doctorList[i].getUid())){
-					doctorList[i].setName((doctorList[i].getName()==null)?null:member.getName());
-					doctorList[i].setEmail((doctorList[i].getEmail()==null)?null:member.getEmail());
-					doctorList[i].setPhone((doctorList[i].getPhone()==null)?null:member.getPhone());
+					doctorList[i].setName((doctorList[i].getName()==null)?doctorList[i].getName():member.getName());
+					doctorList[i].setEmail((doctorList[i].getEmail()==null)?doctorList[i].getEmail():member.getEmail());
+					doctorList[i].setPhone((doctorList[i].getPhone()==null)?doctorList[i].getPhone():member.getPhone());
 				}
 			}
 		}else{
 			for(int i=0;i<count[1];i++){
 				if(member.getUid().equals(nurseList[i].getUid())){
-					nurseList[i].setName((nurseList[i].getName()==null)?null:member.getName());
-					nurseList[i].setEmail((nurseList[i].getEmail()==null)?null:member.getEmail());
-					nurseList[i].setPhone((nurseList[i].getPhone()==null)?null:member.getPhone());
+					nurseList[i].setName((nurseList[i].getName()==null)?nurseList[i].getName():member.getName());
+					nurseList[i].setEmail((nurseList[i].getEmail()==null)?nurseList[i].getEmail():member.getEmail());
+					nurseList[i].setPhone((nurseList[i].getPhone()==null)?nurseList[i].getPhone():member.getPhone());
 				}
 			}
-		}
-		
+		}		
 	}
 	@Override
 	public void remove(MemberBean member) {
-		// TODO Auto-generated method stub
-		
+		if((member!=null)&&(member instanceof DoctorBean)){
+			for(int i=0;i<count[0];i++){
+				if(member.getUid().equals(doctorList[i].getUid())){
+					doctorList[i]=doctorList[count[0]-1];
+					break;
+				}
+			}
+		}else{
+			for(int i=0;i<count[1];i++){
+				if(member.getUid().equals(nurseList[i].getUid())){
+					doctorList[i]=doctorList[count[1]-1];
+					break;
+				}
+			}
+		}
 	}
 	@Override
 	public boolean exist(MemberBean member) {
-		// TODO Auto-generated method stub
+		boolean check=false;
+		if((member!=null)&&(member instanceof DoctorBean)){
+			for(int i=0;i<count[0];i++){
+				if(member.getUid().equals(doctorList[i].getUid())){
+					check=true;
+					break;
+				}
+			}
+		}else{
+			for(int i=0;i<count[1];i++){
+				if(member.getUid().equals(nurseList[i].getUid())){
+					check=true;
+					break;
+				}
+			}
+		}
 		return false;
 	}
 }
