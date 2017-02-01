@@ -60,7 +60,7 @@ public class AdminController {
 					}
 					break;
 				case STAFF_LIST:
-					AdminButt listSelect=(AdminButt)JOptionPane.showInputDialog(null,"ADD PAGE","SELECT MENU", JOptionPane.QUESTION_MESSAGE, null, addButt, addButt[0]);
+					AdminButt listSelect=(AdminButt)JOptionPane.showInputDialog(null,"LIST PAGE","SELECT MENU", JOptionPane.QUESTION_MESSAGE, null, addButt, addButt[0]);
 					switch(listSelect){
 					case DOCTOR:
 						DoctorBean[] docList = service.doctorList();
@@ -89,7 +89,7 @@ public class AdminController {
 					}
 					break;
 				case FIND_BY_STAFF_ID:
-					AdminButt finaIdSelect=(AdminButt)JOptionPane.showInputDialog(null,"ADD PAGE","SELECT MENU", JOptionPane.QUESTION_MESSAGE, null, addButt, addButt[0]);
+					AdminButt finaIdSelect=(AdminButt)JOptionPane.showInputDialog(null,"FIND BY ID PAGE","SELECT MENU", JOptionPane.QUESTION_MESSAGE, null, addButt, addButt[0]);
 					switch(finaIdSelect){
 					case DOCTOR:
 						doc.setUid(input("찾을 의사 아이디를 입력하세요."));
@@ -104,7 +104,7 @@ public class AdminController {
 					}
 					break;
 				case FIND_BY_STAFF_NAME:
-					AdminButt finaNameSelect=(AdminButt)JOptionPane.showInputDialog(null,"ADD PAGE","SELECT MENU", JOptionPane.QUESTION_MESSAGE, null, addButt, addButt[0]);
+					AdminButt finaNameSelect=(AdminButt)JOptionPane.showInputDialog(null,"FIND BY NAME PAGE","SELECT MENU", JOptionPane.QUESTION_MESSAGE, null, addButt, addButt[0]);
 					switch(finaNameSelect){
 					case DOCTOR:
 						doc= new DoctorBean();
@@ -137,7 +137,7 @@ public class AdminController {
 					}
 					break;
 				case CHANGE_STAFF_INFO:
-					AdminButt changeSelect=(AdminButt)JOptionPane.showInputDialog(null,"ADD PAGE","SELECT MENU", JOptionPane.QUESTION_MESSAGE, null, addButt, addButt[0]);
+					AdminButt changeSelect=(AdminButt)JOptionPane.showInputDialog(null,"CHANGE INFO PAGE","SELECT MENU", JOptionPane.QUESTION_MESSAGE, null, addButt, addButt[0]);
 					switch(changeSelect){
 					case DOCTOR:
 						doc = new DoctorBean();
@@ -166,7 +166,7 @@ public class AdminController {
 					}
 					break;
 				case DELETE_STAFF:
-					AdminButt deleteSelect=(AdminButt)JOptionPane.showInputDialog(null,"ADD PAGE","SELECT MENU", JOptionPane.QUESTION_MESSAGE, null, addButt, addButt[0]);
+					AdminButt deleteSelect=(AdminButt)JOptionPane.showInputDialog(null,"DELETE PAGE","SELECT MENU", JOptionPane.QUESTION_MESSAGE, null, addButt, addButt[0]);
 					switch(deleteSelect){
 					case DOCTOR:
 						doc.setUid(input("삭제할 의사 아이디를 입력하세요."));
