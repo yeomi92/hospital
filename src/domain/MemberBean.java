@@ -40,7 +40,7 @@ public class MemberBean {
 	public void setUid(String uid) {
 		this.uid = uid;
 	}
-	public String getGender(String ssn){
+	public String getGender(){
 		String gender="";
 		switch(ssn.charAt(7)){
 			case '1':case '3':
@@ -52,7 +52,7 @@ public class MemberBean {
 		}
 		return gender;
 	}
-	public int getAge(String ssn){
+	public int getAge(){
 		int age=0;
 		int jumin=Integer.parseInt(ssn.substring(0,2));
 		switch(ssn.charAt(7)){

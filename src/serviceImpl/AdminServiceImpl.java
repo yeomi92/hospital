@@ -7,9 +7,9 @@ import domain.PatientBean;
 import service.AdminService;
 
 public class AdminServiceImpl implements AdminService{
-	DoctorBean[] doctorList;
-	NurseBean[] nurseList;
-	int[] count;
+	private DoctorBean[] doctorList;
+	private NurseBean[] nurseList;
+	private int[] count;
 	public AdminServiceImpl() {
 		count = new int[2];
 		doctorList = new DoctorBean[count[0]];
@@ -102,7 +102,7 @@ public class AdminServiceImpl implements AdminService{
 			}
 		}else{
 			for(int i=0;i<count[1];i++){
-				if(member.getUid().equals(nurseList[i].getUid())){
+				if(member.getName().equals(nurseList[i].getName())){
 					memberName[num]=nurseList[i];
 					num++;
 				}
@@ -115,13 +115,13 @@ public class AdminServiceImpl implements AdminService{
 		int num=0;
 		if((member!=null)&&(member instanceof DoctorBean)){
 			for(int i=0;i<count[0];i++){
-				if(member.getUid().equals(doctorList[i].getUid())){
+				if(member.getName().equals(doctorList[i].getName())){
 					num++;
 				}
 			}
 		}else{
 			for(int i=0;i<count[1];i++){
-				if(member.getUid().equals(nurseList[i].getUid())){
+				if(member.getName().equals(nurseList[i].getName())){
 					num++;
 				}
 			}
@@ -145,17 +145,18 @@ public class AdminServiceImpl implements AdminService{
 		if((member!=null)&&(member instanceof DoctorBean)){
 			for(int i=0;i<count[0];i++){
 				if(member.getUid().equals(doctorList[i].getUid())){
-					doctorList[i].setName((doctorList[i].getName()==null)?doctorList[i].getName():member.getName());
-					doctorList[i].setEmail((doctorList[i].getEmail()==null)?doctorList[i].getEmail():member.getEmail());
-					doctorList[i].setPhone((doctorList[i].getPhone()==null)?doctorList[i].getPhone():member.getPhone());
+					System.out.println("내용변경"+i);
+					doctorList[i].setName((member.getName()==null)?doctorList[i].getName():member.getName());
+					doctorList[i].setEmail((member.getEmail()==null)?doctorList[i].getEmail():member.getEmail());
+					doctorList[i].setPhone((member.getPhone()==null)?doctorList[i].getPhone():member.getPhone());
 				}
 			}
 		}else{
 			for(int i=0;i<count[1];i++){
 				if(member.getUid().equals(nurseList[i].getUid())){
-					nurseList[i].setName((nurseList[i].getName()==null)?nurseList[i].getName():member.getName());
-					nurseList[i].setEmail((nurseList[i].getEmail()==null)?nurseList[i].getEmail():member.getEmail());
-					nurseList[i].setPhone((nurseList[i].getPhone()==null)?nurseList[i].getPhone():member.getPhone());
+					nurseList[i].setName((member.getName()==null)?nurseList[i].getName():member.getName());
+					nurseList[i].setEmail((member.getEmail()==null)?nurseList[i].getEmail():member.getEmail());
+					nurseList[i].setPhone((member.getPhone()==null)?nurseList[i].getPhone():member.getPhone());
 				}
 			}
 		}		
@@ -166,6 +167,7 @@ public class AdminServiceImpl implements AdminService{
 			for(int i=0;i<count[0];i++){
 				if(member.getUid().equals(doctorList[i].getUid())){
 					doctorList[i]=doctorList[count[0]-1];
+					count[0]--;
 					break;
 				}
 			}
@@ -173,6 +175,7 @@ public class AdminServiceImpl implements AdminService{
 			for(int i=0;i<count[1];i++){
 				if(member.getUid().equals(nurseList[i].getUid())){
 					doctorList[i]=doctorList[count[1]-1];
+					count[1]--;
 					break;
 				}
 			}

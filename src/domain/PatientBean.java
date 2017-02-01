@@ -51,6 +51,6 @@ public class PatientBean extends MemberBean{
 					+ "phone: %s\n"
 					+ "email: %s\n"
 					+ "job: %s\n",
-					name,uid,nurId,docId,name,getGender(ssn),ssn,addr,phone,email,patJob);
+					name,uid,nurId,docId,name,getGender(),ssn,addr,phone,email,patJob);
 	}
 }
