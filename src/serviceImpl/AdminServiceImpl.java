@@ -146,17 +146,17 @@ public class AdminServiceImpl implements AdminService{
 			for(int i=0;i<count[0];i++){
 				if(member.getUid().equals(doctorList[i].getUid())){
 					System.out.println("내용변경"+i);
-					doctorList[i].setName((member.getName()==null)?doctorList[i].getName():member.getName());
-					doctorList[i].setEmail((member.getEmail()==null)?doctorList[i].getEmail():member.getEmail());
-					doctorList[i].setPhone((member.getPhone()==null)?doctorList[i].getPhone():member.getPhone());
+					doctorList[i].setName((member.getName().equals(""))?doctorList[i].getName():member.getName());
+					doctorList[i].setEmail((member.getEmail().equals(""))?doctorList[i].getEmail():member.getEmail());
+					doctorList[i].setPhone((member.getPhone().equals(""))?doctorList[i].getPhone():member.getPhone());
 				}
 			}
 		}else{
 			for(int i=0;i<count[1];i++){
 				if(member.getUid().equals(nurseList[i].getUid())){
-					nurseList[i].setName((member.getName()==null)?nurseList[i].getName():member.getName());
-					nurseList[i].setEmail((member.getEmail()==null)?nurseList[i].getEmail():member.getEmail());
-					nurseList[i].setPhone((member.getPhone()==null)?nurseList[i].getPhone():member.getPhone());
+					nurseList[i].setName((member.getName().equals(""))?nurseList[i].getName():member.getName());
+					nurseList[i].setEmail((member.getEmail().equals(""))?nurseList[i].getEmail():member.getEmail());
+					nurseList[i].setPhone((member.getPhone().equals(""))?nurseList[i].getPhone():member.getPhone());
 				}
 			}
 		}		
